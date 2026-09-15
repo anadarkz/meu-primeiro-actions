@@ -1,0 +1,18 @@
+name: Meu Primeiro Projeto
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  testar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Pegar o código
+        uses: actions/checkout@v4
+
+      - name: Minha primeira mensagem
+        run: echo "Deu certo! 🎉"
+
+      - name: Mostrar arquivos
+        run: ls -la
