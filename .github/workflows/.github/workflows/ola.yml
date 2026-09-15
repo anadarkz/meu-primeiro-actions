@@ -1,0 +1,23 @@
+name: Meu Primeiro Projeto
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  testar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Pegar o código
+        uses: actions/checkout@v4
+
+      - name: Mensagem personalizada
+        run: |
+          echo "Olá! Eu estou aprendendo GitHub Actions!"
+          echo "Repositório: ${{ github.repository }}"
+          echo "Quem fez: ${{ github.actor }}"
+
+      - name: Criar um arquivo
+        run: |
+          echo "Gerado automaticamente" > relatorio.txt
+          cat relatorio.txt
